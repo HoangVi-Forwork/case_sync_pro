@@ -5,8 +5,10 @@ import 'package:case_sync_pro/resource/csp_dimes.dart';
 import 'package:case_sync_pro/resource/csp_drawable.dart';
 import 'package:case_sync_pro/resource/csp_lang.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import '../../resource/csp_styles.dart';
+import '../../router/app_route.dart';
 import '../../utils/ui_utils.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -15,6 +17,11 @@ class CSPSplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Loading time, after 5 seconds auto navigation to HomeScreen
+    Future.delayed(Duration(seconds: 5), () {
+      Get.offNamed(ROUTE_LOGIN_SCREEN);
+    });
+
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Column(
@@ -25,11 +32,9 @@ class CSPSplashScreen extends StatelessWidget {
               children: [
                 Animate(
                   effects: [
-                    // Rotate effect with a slow, continuous animation
                     RotateEffect(
-                      curve: Curves
-                          .easeInCirc, // Adjust curve for different rotation behavior
-                      end: 2.0 * pi, // Rotate 360 degrees (2 * pi radians)
+                      curve: Curves.easeInCirc,
+                      end: 2.0 * pi,
                     ),
                   ],
                   child: Container(
@@ -38,7 +43,6 @@ class CSPSplashScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
-                      // borderRadius: BorderRadius.circular(CSPDimens.radiusButton),
                     ),
                     child: Image.asset(
                       CSPDrawable.appLogo,
@@ -53,6 +57,7 @@ class CSPSplashScreen extends StatelessWidget {
                 CenterContainer(
                   width: double.infinity,
                   margin: 0,
+                  height: 180,
                   child: Center(
                     child: Text(
                       CSPLanguage.appDescription,
@@ -69,7 +74,7 @@ class CSPSplashScreen extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 24),
             child: Center(
               child: LoadingAnimationWidget.dotsTriangle(
-                color: CSPColors.textColor.withOpacity(0.6),
+                color: CSPColors.textDarkColor.withOpacity(0.6),
                 size: 22,
               ),
             ),
