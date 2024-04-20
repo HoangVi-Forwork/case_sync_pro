@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # case_sync_pro
 
 A new Flutter project.
@@ -17,4 +16,3 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 =======
 # case_sync_pro
->>>>>>> 8f4c676 (Initial commit)
