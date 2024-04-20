@@ -5,9 +5,20 @@ class CSPColors {
   static var primaryColor = HexColor('#4f4888');
   static var backgroundDarkColor = HexColor('#2c2f38');
   static var backgroundLightColor = HexColor('#ffffff');
+  static var whileColors = HexColor('#ffffff');
 
   // TEXT COLORS
-  static var textColor = HexColor('#f2f2f2');
+  static var textLightColor = HexColor('#f2f2f2');
+  static var textDarkColor = HexColor('#333333');
+  
+  // BORDER AND DRIVER COLORS
+  static var dividerColor = HexColor('##808080');
+
+  // ERROR COLOR
+  static var errorColor = HexColor('##992600');
+
+  // Order
+  static var appDisableColor = HexColor('##808080');
 }
 
 // Parse hex to color.

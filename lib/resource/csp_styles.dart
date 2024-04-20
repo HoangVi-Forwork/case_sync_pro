@@ -1,4 +1,5 @@
 import 'package:case_sync_pro/resource/csp_dimes.dart';
+import 'package:case_sync_pro/utils/ui_utils.dart';
 
 import 'csp_colors.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ final ThemeData appTheme = ThemeData(
   appBarTheme: AppBarTheme(
     color: CSPColors.primaryColor,
   ),
-  scaffoldBackgroundColor: CSPColors.backgroundDarkColor,
+  scaffoldBackgroundColor: CSPColors.backgroundLightColor,
 );
 
 // TEXT STYLE
@@ -17,31 +18,31 @@ class CSPTextStyle {
   CSPTextStyle._();
 
   static TextStyle textStyleSmall = TextStyle(
-    color: CSPColors.textColor,
+    color: CSPColors.textDarkColor,
     fontSize: CSPDimens.text12,
     fontWeight: FontWeight.normal,
   );
 
   static TextStyle textStyleNormal = TextStyle(
-    color: CSPColors.textColor,
+    color: CSPColors.textDarkColor,
     fontSize: CSPDimens.text12 + 2,
     fontWeight: FontWeight.normal,
   );
 
   static TextStyle textStyleMedium = TextStyle(
-    color: CSPColors.textColor,
+    color: CSPColors.textDarkColor,
     fontSize: CSPDimens.text18,
     fontWeight: FontWeight.normal,
   );
 
   static TextStyle textStyleLargest = TextStyle(
-    color: CSPColors.textColor,
+    color: CSPColors.textDarkColor,
     fontSize: CSPDimens.text24,
     fontWeight: FontWeight.normal,
   );
 
   static TextStyle textStyleSuperLargest = TextStyle(
-    color: CSPColors.textColor,
+    color: CSPColors.textDarkColor,
     fontSize: CSPDimens.text12 + 2,
     fontWeight: FontWeight.normal,
   );
@@ -74,6 +75,35 @@ class CenterContainer extends StatelessWidget {
         padding: EdgeInsets.all(padding),
         child: child,
       ),
+    );
+  }
+}
+
+class TextFormFieldAndTitle extends StatelessWidget {
+  final String? title;
+  final TextEditingController? controller;
+
+  const TextFormFieldAndTitle({super.key, this.title, this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          '$title',
+          style: CSPTextStyle.textStyleNormal,
+        ),
+        UiUtil.horizontalSpace8,
+        TextFormField(
+          controller: controller,
+          style: TextStyle(color: CSPColors.textDarkColor),
+          cursorColor: CSPColors.textDarkColor,
+            decoration: InputDecoration(
+              fillColor: CSPColors.textDarkColor,
+            ),
+        ),
+      ],
     );
   }
 }
