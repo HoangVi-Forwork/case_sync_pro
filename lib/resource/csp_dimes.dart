@@ -47,6 +47,9 @@ class CSPDimens {
   static const double margin40 = 40;
   static const double margin50 = 50;
   static const double margin70 = 70;
+  static const double margin80 = 80;
+  static const double margin90 = 90;
+  static const double margin100 = 100;
 
   // region text
   static const double textSmallFontSize = 12;

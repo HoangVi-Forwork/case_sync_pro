@@ -1,6 +1,7 @@
 import 'package:case_sync_pro/resource/csp_dimes.dart';
 import 'package:case_sync_pro/utils/ui_utils.dart';
 
+import '../widgets/csp_text_form_field.dart';
 import 'csp_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -94,14 +95,9 @@ class TextFormFieldAndTitle extends StatelessWidget {
           '$title',
           style: CSPTextStyle.textStyleNormal,
         ),
-        UiUtil.horizontalSpace8,
-        TextFormField(
+        UiUtil.verticalSpace8,
+        CSPTextFormField(
           controller: controller,
-          style: TextStyle(color: CSPColors.textDarkColor),
-          cursorColor: CSPColors.textDarkColor,
-            decoration: InputDecoration(
-              fillColor: CSPColors.textDarkColor,
-            ),
         ),
       ],
     );

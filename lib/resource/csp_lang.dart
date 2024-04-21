@@ -15,6 +15,5 @@ class CSPLanguage {
   static const logout = 'Logout';
   static const register = 'Register';
   static const forgotPassword = 'Forgot password?';
-
-
+  static const registerQuestion = 'You don\'t have accout? Register now?';
 }

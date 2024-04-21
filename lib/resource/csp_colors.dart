@@ -10,7 +10,7 @@ class CSPColors {
   // TEXT COLORS
   static var textLightColor = HexColor('#f2f2f2');
   static var textDarkColor = HexColor('#333333');
-  
+
   // BORDER AND DRIVER COLORS
   static var dividerColor = HexColor('##808080');
 
