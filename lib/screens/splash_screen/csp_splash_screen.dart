@@ -61,8 +61,7 @@ class CSPSplashScreen extends StatelessWidget {
                   child: Center(
                     child: Text(
                       CSPLanguage.appDescription,
-                      style: CSPTextStyle.textStyleMedium
-                          .copyWith(color: Colors.white70),
+                      style: CSPTextStyle.textStyleMedium,
                       textAlign: TextAlign.center,
                     ),
                   ),
